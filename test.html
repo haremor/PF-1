@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHET</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.9/Tone.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: salmon;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: darkslateblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="F4"></div>
+    <div id="A4"></div>
+    <div id="C5"></div>
+    <div id="E5"></div>
+    <script>
+        const log = console.log;
+        const keyMatch = {
+            a: null,
+            s: null,
+            d: null,
+            f: null
+        }
+        let keys = document.getElementsByTagName("div");
+        keys = Array.from(keys);
+        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+
+        const playNote = el => { // Handle the element given
+            this.now = Tone.now(); // Tone.now must be global to keep track of
+            let note = el.id;
+            synth.triggerAttack(note, now);
+        }
+
+        const stopNote = el => {
+            this.now = Tone.now();
+            let note = el.id;
+            synth.triggerRelease(note, now); // Stop all notes playing
+        }
+
+        keys.forEach((el) => {
+            el.onmousedown = () => {playNote(el)} // "this" is global
+            el.onmouseup = () => {stopNote(el)}
+            el.onmouseleave = () => {stopNote(el)}
+        })
+
+        for (const [, value] of Object.entries(keyMatch)) {
+            log(value)
+        }
+
+        document.onkeydown = e => {
+            if (e.key in keyMatch){
+                
+            }
+        }
+    </script>
+</body>
+</html>
