@@ -13,10 +13,10 @@ for (let octave = 2; octave <= toOctave; octave++) {
             hasSharp = false;
         }
 
-        html += `<li class="key_container"><div id="${note}" class="white_key"></div>`;
+        html += `<li class="key_container"><div id="${note + octave}" class="white_key"></div>`;
 
         if (hasSharp) {
-            html += `<div id="${note + "#"}" class="black_key"></div>`;
+            html += `<div id="${note + "#" + octave}" class="black_key"></div>`;
         }
 
         html += "</li>";
