@@ -1,7 +1,7 @@
 let keyCodes = {
     "KeyA": null,
     "KeyW": null,
-    "synthKeys": null,
+    "KeyS": null,
     "KeyE": null,
     "KeyD": null,
     "KeyF": null,
