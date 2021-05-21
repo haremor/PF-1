@@ -50,9 +50,9 @@
             height: 190px;
             box-sizing: content-box;
             background-color: white;
-            border-right: 1px solid rgba(32, 32, 32, .3);
+            border-right: 0.5px solid rgba(32, 32, 32, .3);
             transition-property: background-color;
-            transition-duration: 0.1s;
+            transition-duration: 0.5s;
         }
         .black_key {
             width: 70%;
@@ -61,17 +61,14 @@
             right: -36%;
             z-index: 1;
             background-color: black;
-            border-width: 1px;
+            border: solid 1px black;
             border-radius: 0 0 5px 5px;
-            border-style: solid;
             transition-property: background-color, border-color;
-            transition-duration: 0.1s;
+            transition-duration: 0.5s;
         }
         .active {
             background-color: rgb(255, 207, 51);
-        }
-        .active.black_key {
-            border-color: rgb(255, 207, 51);
+            transition-duration: 0s;
         }
     </style>
 </head>
