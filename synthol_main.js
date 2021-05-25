@@ -49,7 +49,7 @@ let customSynth = {
                 1
             ],
             "phase": 0,
-            "type": "custom"
+            "type": "square"
         }
     },
     // gotta make an anti-click mode
@@ -120,12 +120,12 @@ document.onkeydown = e => {
     switch (e.code) {
         case "KeyX":
             customSynth.changeOctaveBy++;
-            customSynth.changeOctaveBy = clamp(customSynth.changeOctaveBy, -1, 6);
+            customSynth.changeOctaveBy = clamp(customSynth.changeOctaveBy, -1, 5);
             toneSynth.releaseAll();
             break;
         case "KeyZ":
             customSynth.changeOctaveBy--;
-            customSynth.changeOctaveBy = clamp(customSynth.changeOctaveBy, -1, 6);
+            customSynth.changeOctaveBy = clamp(customSynth.changeOctaveBy, -1, 5);
             toneSynth.releaseAll();
             break;
         default:

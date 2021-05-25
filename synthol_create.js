@@ -24,5 +24,5 @@ for (let octave = 2; octave <= toOctave; octave++) {
     html += "</ul>"
 }
 
-let synth_space = document.getElementById("synth_wrap");
+let synth_space = document.getElementById("keys");
 synth_space.innerHTML = html;
