@@ -1,7 +1,7 @@
 let customSynth = {
     note: null,
     changeOctaveBy: 0,
-    synthParams: {
+    params: {
         "volume": -8,
         "detune": 0,
         "portamento": 0,
@@ -94,7 +94,7 @@ let customSynth = {
 
 let synthKeys = document.querySelectorAll(".key_container>*");
 synthKeys = Array.from(synthKeys);
-const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.synthParams).toDestination(); // Define the synth
+const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.params).toDestination(); // Define the synth
 let mouseDown;
 
 document.addEventListener("mousedown", () => { mouseDown = true });
@@ -105,7 +105,7 @@ const clamp = (n, min, max) => { // Clamp the value between the thresholds
 }
 
 synthKeys.forEach(el => { // Key events
-    el.onmousedown = e => { e.button == 0 ? customSynth.playNote(e.target) : null }
+    el.onmousedown = e => { e.button === 0 ? customSynth.playNote(e.target) : null }
     el.onmouseup = e => { customSynth.stopNote(e.target) }
     el.onmouseover = e => { if (mouseDown) customSynth.playNote(e.target) }; // I implemented this just so you can do a fucking key slide on a mousedown
     el.onmouseleave = e => { customSynth.stopNote(e.target) };

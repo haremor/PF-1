@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" sizes="128x128" href="favicon.ico" type="image/ico">
-    <link rel="stylesheet" href="synthol.css">
+    <link rel="stylesheet" href="synth_style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.9/Tone.js"></script>
     <title>Synthol</title>
 </head>
+
 <body>
     <div class="synth noselect">
         <div class="controls">
             <div class="logo">PF-1</div>
             <div class="additional"></div>
             <div class="osc">
-                <span>OSC</span>
-                
+                <div class="section_name">OSC</div>
+                <div class="osc_ws">
+                    <div class="osc_type">
+                        <div class="osc_type_inner">
+                            <div class="knob" style="margin: auto"></div>
+                            <div class="sqr">SQR</div>
+                            <div class="tri">TRI</div>
+                            <div class="sin">SIN</div>
+                            <div class="saw">SAW</div>
+                        </div>
+                    </div>
+                    <div class="osc_partials">
+                    </div>
+                </div>
             </div>
             <div class="env">
-                <span>ENV</span>
+                <div>ENV</div>
             </div>
             <div class="filter">
-                <span>FILTER</span>
+                <div>FILTER</div>
             </div>
             <div class="filter_env">
-                <span>FILTER-ENV</span>
+                <div>FILTER-ENV</div>
             </div>
         </div>
         <div class="key_wrap">
             <div id="keys"></div>
         </div>
     </div>
-    <script src="synthol_create.js"></script>
-    <script src="synthol_main.js"></script>
+    <script src="create.js"></script>
+    <script src="keys_init.js"></script>
+    <script src="param_controls.js"></script>
 </body>
+
 </html>
 <!-- 
     Envelope:
