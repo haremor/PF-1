@@ -1,5 +1,5 @@
 let customSynth = {
-    note: null,
+    currentNote: null,
     changeOctaveBy: 0,
     params: {
         "volume": -8,
@@ -56,7 +56,7 @@ let customSynth = {
     playNote: function (el) {
         el.classList.add("active");
         // globalThis.now = Tone.now();
-        let note = customSynth.note;
+        let note = customSynth.currentNote;
         note = el.id;
         note = note.replace(note[note.length - 1], +note[note.length - 1] + customSynth.changeOctaveBy); // Elegant as fuck
         toneSynth.triggerAttack(note, Tone.immediate());
@@ -65,35 +65,34 @@ let customSynth = {
     stopNote: function (el) {
         el.classList.remove("active");
         // globalThis.now = Tone.now();
-        let note = customSynth.note;
+        let note = customSynth.currentNote;
         note = el.id;
         note = note.replace(note[note.length - 1], +note[note.length - 1] + customSynth.changeOctaveBy);
         toneSynth.triggerRelease(note, Tone.immediate());
-    },
-
-    keyCodes: {
-        "KeyA": null,
-        "KeyW": null,
-        "KeyS": null,
-        "KeyE": null,
-        "KeyD": null,
-        "KeyF": null,
-        "KeyT": null,
-        "KeyG": null,
-        "KeyY": null,
-        "KeyH": null,
-        "KeyU": null,
-        "KeyJ": null,
-        "KeyK": null,
-        "KeyO": null,
-        "KeyL": null,
-        "KeyP": null,
-        "Semicolon": null
     }
 }
 
+let keyCodes = {
+    "KeyA": null,
+    "KeyW": null,
+    "KeyS": null,
+    "KeyE": null,
+    "KeyD": null,
+    "KeyF": null,
+    "KeyT": null,
+    "KeyG": null,
+    "KeyY": null,
+    "KeyH": null,
+    "KeyU": null,
+    "KeyJ": null,
+    "KeyK": null,
+    "KeyO": null,
+    "KeyL": null,
+    "KeyP": null,
+    "Semicolon": null
+}
+
 let synthKeys = document.querySelectorAll(".key_container>*");
-synthKeys = Array.from(synthKeys);
 const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.params).toDestination(); // Define the synth
 let mouseDown;
 
@@ -112,8 +111,8 @@ synthKeys.forEach(el => { // Key events
 })
 
 let i = 0;
-for (let key in customSynth.keyCodes) { // Asign keyCodes
-    customSynth.keyCodes[key] = synthKeys[i++]
+for (let key in keyCodes) { // Asign key codes
+    keyCodes[key] = synthKeys[i++]
 }
 
 document.onkeydown = e => {
@@ -128,14 +127,17 @@ document.onkeydown = e => {
             customSynth.changeOctaveBy = clamp(customSynth.changeOctaveBy, -1, 5);
             toneSynth.releaseAll();
             break;
+        case "Quote": // Disable Firefox Search
+            e.preventDefault();
+            break;
         default:
-            if (e.code in customSynth.keyCodes && !e.repeat) { // Ignore repeats on key hold
-                customSynth.playNote(customSynth.keyCodes[e.code]);
+            if (e.code in keyCodes && !e.repeat) { // Ignore repeats on key hold
+                customSynth.playNote(keyCodes[e.code]);
             }
     }
     document.onkeyup = e => {
-        if (e.code in customSynth.keyCodes) {
-            customSynth.stopNote(customSynth.keyCodes[e.code]);
+        if (e.code in keyCodes) {
+            customSynth.stopNote(keyCodes[e.code]);
         }
     }
 }

@@ -26,12 +26,6 @@ ul {
     padding: 0;
 }
 
-legend {
-    background-color: black;
-    color: white;
-    padding: 3px 6px;
-}
-
 .synth {
     width: 900px;
     height: 600px;
@@ -54,7 +48,6 @@ legend {
 .controls>*:not(.logo) {
     border: 1px solid white;
     border-radius: 10px;
-    font-size: 0.8rem;
     font-family: "Lato", sans-serif;
 }
 
@@ -63,16 +56,18 @@ legend {
     text-align: center;
 }
 
-.section_name {
-    flex-basis: 20%;
-}
-
 .logo {
     grid-area: 1 / 1 / 2 / 2;
     margin: auto;
     font-size: 5rem;
     font-weight: bolder;
     font-family: 'Odibee Sans', cursive;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.section_name {
+    flex-basis: 20%;
 }
 
 .additional {
@@ -90,38 +85,34 @@ legend {
 }
 
 .osc_type {
-    height: 40%;
+    height: 25%;
 }
 
-.osc_type_inner {
-    width: 50%;
+.osc_type_select {
+    width: 55%;
     height: 100%;
-    margin: auto;
+    margin-left: 75px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.osc_type_inner>*:not(.knob) {
-    width: 6em;
-    position: absolute;
+.select_el {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.sqr {
-    transform: translate(-50%);
-}
-
-.tri {
-    transform: rotate(240deg) translate(50%) rotate(-240deg);
-}
-
-.sin {
-    transform: rotate(300deg) translate(50%) rotate(-300deg);
-}
-
-.saw {
-    transform: translate(50%);
+.is_fat {
+    width: 10px;
 }
 
 .osc_partials {
-    height: 60%;
+    height: 75%;
 }
 
 .env {
@@ -134,13 +125,6 @@ legend {
 
 .filter_env {
     grid-area: 3 / 3 / 5 / 6;
-}
-
-.knob {
-    width: 35px;
-    height: 35px;
-    /* margin: 10px; */
-    background-image: url("knob.svg");
 }
 
 .key_wrap {
