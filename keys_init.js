@@ -15,8 +15,8 @@ let customSynth = {
             "sustain": 0.4
         },
         "filter": {
-            "Q": 3,
-            "detune": 43,
+            "Q": 1,
+            "detune": 0,
             "frequency": 0,
             "gain": 0,
             "rolloff": -12,
@@ -38,16 +38,7 @@ let customSynth = {
             "detune": 0,
             "frequency": 440,
             "partialCount": 8,
-            "partials": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
+            "partials": [],
             "phase": 0,
             "type": "square"
         }

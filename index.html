@@ -21,14 +21,36 @@
                 <div class="osc_ws">
                     <div class="osc_type">
                         <div class="osc_type_select">
-                            <div class="select_el">SQR</div>
-                            <div class="select_el">TRI</div>
-                            <div class="select_el">SIN</div>
-                            <div class="select_el">SAW</div>
+                            <div class="button" style="grid-area: 1 / 1 / 2 / 2; ">SQR</div>
+                            <div class="button" style="grid-area: 1 / 2 / 2 / 3; ">TRI</div>
+                            <div class="button" style="grid-area: 2 / 1 / 3 / 2; ">SIN</div>
+                            <div class="button" style="grid-area: 2 / 2 / 3 / 3; ">SAW</div>
                         </div>
-                        <div class="is_fat">ff</div>
+                        <table>
+                            <tr>
+                                <td>Osc-count</td>
+                                <td>
+                                    <input type="number" id="" value="0" min="2" max="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spread</td>
+                                <td>
+                                    <input type="number" id="" value="0" min="0" max="500">
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="osc_partials">
+                        <table>
+                            <tr>
+                                <td>Partial-count</td>
+                                <td>
+                                    <input type="number" id="" value="0" min="0" max="8">
+                                </td>
+                            </tr>
+                        </table>
+                        <div></div>
                     </div>
                 </div>
             </div>
@@ -52,11 +74,3 @@
 </body>
 
 </html>
-<!-- 
-    Envelope:
-    A D S R + curves
-    Oscillator:
-    detune partials + count
-    Filter:
-    Q rolloff type
- -->
