@@ -28,9 +28,8 @@ ul {
     padding: 0;
 }
 
-input {
+input[type=number] {
     width: 30px;
-    margin-left: 5px;
     -moz-appearance: textfield;
     background-color: transparent;
     border-top: none;
@@ -42,6 +41,15 @@ input {
     font-family: inherit;
     text-align: center;
     transition: .5s;
+}
+
+input[type=range] {
+    /* width and height are swapped due to transformation */
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    position: relative;
+    top: 15%;
 }
 
 input:focus {
@@ -81,6 +89,8 @@ input::-webkit-inner-spin-button {
 }
 
 .controls>*:not(.logo) {
+    display: flex;
+    flex-direction: column;
     border: var(--sexy-border);
     border-radius: 10px;
     font-family: "Lato", sans-serif;
@@ -103,6 +113,12 @@ input::-webkit-inner-spin-button {
 
 .section_name {
     flex-basis: 20%;
+}
+
+.working_space {
+    margin: 0 5% 5% 5%;
+    flex-basis: 80%;
+    display: flex;
 }
 
 .button {
@@ -128,18 +144,17 @@ input::-webkit-inner-spin-button {
 
 .osc {
     grid-area: 1 / 2 / 3 / 4;
-    display: flex;
-    flex-direction: column;
 }
 
-.osc_ws {
-    margin: 0 5% 5% 5%;
-    flex-basis: 80%;
-    display: flex;
+.osc input {
+    margin-left: 5px;
+}
+
+.osc .working_space {
     justify-content: space-evenly;
 }
 
-.osc_type {
+.osc_type_options {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,6 +178,7 @@ input::-webkit-inner-spin-button {
 .partials_container {
     width: 100%;
     padding: 10% 5% 10% 5%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     flex: 1;
@@ -189,6 +205,26 @@ input::-webkit-inner-spin-button {
 
 .env {
     grid-area: 1 / 4 / 3 / 6;
+}
+
+.env .working_space {
+    justify-content: space-around;
+}
+
+.env .working_space>* {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.env .caption {
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.env .working_space input {
+    transform: rotate(-90deg);
 }
 
 .filter {

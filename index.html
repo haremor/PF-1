@@ -18,8 +18,8 @@
             <div class="additional"></div>
             <div class="osc">
                 <div class="section_name">OSC</div>
-                <div class="osc_ws">
-                    <div class="osc_type">
+                <div class="working_space">
+                    <div class="osc_type_options">
                         <div class="osc_type_select">
                             <div class="button" style="grid-area: 1 / 1 / 2 / 2; ">SQR</div>
                             <div class="button" style="grid-area: 1 / 2 / 2 / 3; ">TRI</div>
@@ -80,13 +80,44 @@
                 </div>
             </div>
             <div class="env">
-                <div>ENV</div>
+                <div class="section_name">ENV</div>
+                <div class="working_space">
+                    <div class="attack_container">
+                        <div class="caption">A</div>
+                        <input type="range" id="" min="0" max="2" step="0.1">
+                        <select id="">
+                            <option value="linear">linear</option>
+                            <option value="exponential">exponential</option>
+                            <option value="sine">sine</option>
+                            <option value="cosine">cosine</option>
+                            <option value="bounce">bounce</option>
+                            <option value="ripple">ripple</option>
+                            <option value="step">step</option>
+                        </select>
+                    </div>
+                    <div class="decay_container">
+                        <div class="caption">D</div>
+                        <input type="range" id="" min="0" max="2" step="0.1">
+                        <select id="">
+                            <option value="linear">linear</option>
+                            <option value="exponential">exponential</option>
+                        </select>
+                    </div>
+                    <div class="sustain_container">
+                        <div class="caption">S</div>
+                        <input type="range" id="" min="0" max="1" step="0.1">
+                    </div>
+                    <div class="release_container">
+                        <div class="caption">R</div>
+                        <input type="range" id="" min="0" max="5" step="0.1">
+                    </div>
+                </div>
             </div>
             <div class="filter">
-                <div>FILTER</div>
+                <div class="section_name">FILTER</div>
             </div>
             <div class="filter_env">
-                <div>FILTER-ENV</div>
+                <div class="section_name">FILTER-ENV</div>
             </div>
         </div>
         <div class="key_wrap">
