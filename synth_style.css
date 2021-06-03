@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
-html {
+:root {
     height: 100%;
+    --custom-grey: #434343;
+    --sexy-border: 1px solid white;
 }
 
 body {
@@ -17,7 +19,6 @@ body {
     background-image: url("grid_cell.png"), url("grid_cell.png");
     animation: trip 20s linear infinite alternate; */
     font-family: "Roboto", sans-serif;
-    --custom-grey: #434343;
 }
 
 ul {
@@ -80,7 +81,7 @@ input::-webkit-inner-spin-button {
 }
 
 .controls>*:not(.logo) {
-    border: 1px solid white;
+    border: var(--sexy-border);
     border-radius: 10px;
     font-family: "Lato", sans-serif;
 }
@@ -110,7 +111,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+    border: var(--sexy-border);
     border-radius: 10px;
     box-sizing: border-box;
     transition: .5s;
@@ -132,16 +133,17 @@ input::-webkit-inner-spin-button {
 }
 
 .osc_ws {
+    margin: 0 5% 5% 5%;
     flex-basis: 80%;
     display: flex;
-    margin-left: 5%;
-    margin-right: 5%;
+    justify-content: space-evenly;
 }
 
 .osc_type {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .osc_type_select {
@@ -154,7 +156,35 @@ input::-webkit-inner-spin-button {
 }
 
 .osc_partials {
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.partials_container {
+    width: 100%;
+    padding: 10% 5% 10% 5%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: var(--sexy-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.partial {
+    height: 50%;
+    margin: 0 1px;
+    position: relative;
+    flex: 1;
+}
+
+.fill {
+    pointer-events: none;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
 }
 
 .env {
@@ -170,7 +200,7 @@ input::-webkit-inner-spin-button {
 }
 
 .key_wrap {
-    border-top: 1px solid white;
+    border-top: var(--sexy-border);
 }
 
 #keys {
