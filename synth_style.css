@@ -43,32 +43,55 @@ input[type=number] {
     transition: .5s;
 }
 
-input[type=range] {
-    /* width and height are swapped due to transformation */
-    width: 100%;
-    height: 30px;
-    margin: 0;
-    position: relative;
-    top: 15%;
-}
-
-input:focus {
+input[type=number]:focus {
     border-bottom-color: white;
     transition: .1s;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+input[type=range] {
+    /* width and height are swapped due to transformation */
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 15%;
+    background: none;
+    transform: rotate(-90deg) scale(2, 1);
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-track {
+    height: 5px;
+    background: black;
+    border-radius: 20px;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 2px;
+    height: 20px;
+    border: none
+}
+
+select {
+    background: none;
+    border: var(--sexy-border);
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 .synth {
     width: 900px;
     height: 600px;
+    min-width: 900px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(30deg, #000000, #434343);
+    background: linear-gradient(30deg, #070707, #434343);
     border-radius: 50px 50px 10px 10px;
 }
 
@@ -116,7 +139,7 @@ input::-webkit-inner-spin-button {
 }
 
 .working_space {
-    margin: 0 5% 5% 5%;
+    margin: 0 2% 5% 2%;
     flex-basis: 80%;
     display: flex;
 }
@@ -131,6 +154,7 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
     box-sizing: border-box;
     transition: .5s;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -187,11 +211,13 @@ input::-webkit-inner-spin-button {
     box-sizing: border-box;
 }
 
-.partial {
+.partial,
+.point {
     height: 50%;
     margin: 0 1px;
     position: relative;
     flex: 1;
+    cursor: pointer;
 }
 
 .fill {
@@ -208,27 +234,63 @@ input::-webkit-inner-spin-button {
 }
 
 .env .working_space {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .env .working_space>* {
-    width: 25%;
+    flex-basis: 48%;
+}
+
+.adsr {
+    display: flex;
+}
+
+.adsr>* {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .env .caption {
-    margin-bottom: 10%;
+    margin-bottom: 45%;
     text-align: center;
 }
 
-.env .working_space input {
-    transform: rotate(-90deg);
+.env_val {
+    width: 80%;
+    height: auto;
+    margin: auto 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--sexy-border);
+    border-radius: 10px;
+}
+
+.curves {
+    display: flex;
+    flex-direction: column;
+}
+
+.curves select {
+    width: 100%;
+}
+
+.r_curve {
+    padding: 0% 5% 0% 5%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: var(--sexy-border);
+    border-radius: 10px;
 }
 
 .filter {
     grid-area: 3 / 2 / 5 / 3;
+}
+
+.filter .working_space {
+    justify-content: center;
 }
 
 .filter_env {
@@ -285,7 +347,7 @@ input::-webkit-inner-spin-button {
 }
 
 .button_pressed {
-    filter: invert(100%);
+    filter: invert(1);
 }
 
 /* @keyframes trip {
