@@ -177,77 +177,94 @@
             <div class="filter_env">
                 <div class="section_name">FILTER-ENV</div>
                 <div class="working_space">
-                    <div class="filter_env_adsr">
-                        <div class="adsr">
-                            <div class="attack_container">
-                                <div class="caption">A</div>
-                                <input type="range" id="" value="0" min="0" max="2" step="0.1">
-                                <div class="env_val">0</div>
-                            </div>
-                            <div class="decay_container">
-                                <div class="caption">D</div>
-                                <input type="range" id="" value="0" min="0" max="2" step="0.1">
-                                <div class="env_val">0</div>
-                            </div>
-                            <div class="sustain_container">
-                                <div class="caption">S</div>
-                                <input type="range" id="" value="0" min="0" max="1" step="0.1">
-                                <div class="env_val">0</div>
-                            </div>
-                            <div class="release_container">
-                                <div class="caption">R</div>
-                                <input type="range" id="" value="0" min="0" max="5" step="0.1">
-                                <div class="env_val">0</div>
-                            </div>
+                    <div class="adsr">
+                        <div class="attack_container">
+                            <div class="caption">A</div>
+                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <div class="env_val">0</div>
                         </div>
-                        <div class="curves">
-                            <table>
-                                <tr>
-                                    <td>A-curve</td>
-                                    <td>
-                                        <select id="">
-                                            <option value="linear">linear</option>
-                                            <option value="exponential">exp</option>
-                                            <option value="sine">sine</option>
-                                            <option value="cosine">cosine</option>
-                                            <option value="bounce">bounce</option>
-                                            <option value="ripple">ripple</option>
-                                            <option value="step">step</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>D-curve</td>
-                                    <td>
-                                        <select id="">
-                                            <option value="linear">linear</option>
-                                            <option value="exponential">exp</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div style="text-align: center;">R-curve</div>
-                            <div class="r_curve">
-                                <div class="point">
-                                    <div class="fill" style="height: 100%;"></div>
-                                </div>
-                                <div class="point">
-                                    <div class="fill" style="height: 100%;"></div>
-                                </div>
-                                <div class="point">
-                                    <div class="fill" style="height: 100%;"></div>
-                                </div>
-                                <div class="point">
-                                    <div class="fill" style="height: 100%;"></div>
-                                </div>
-                                <div class="point">
-                                    <div class="fill" style="height: 100%;"></div>
-                                </div>
+                        <div class="decay_container">
+                            <div class="caption">D</div>
+                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <div class="env_val">0</div>
+                        </div>
+                        <div class="sustain_container">
+                            <div class="caption">S</div>
+                            <input type="range" id="" value="0" min="0" max="1" step="0.1">
+                            <div class="env_val">0</div>
+                        </div>
+                        <div class="release_container">
+                            <div class="caption">R</div>
+                            <input type="range" id="" value="0" min="0" max="5" step="0.1">
+                            <div class="env_val">0</div>
+                        </div>
+                    </div>
+                    <div class="curves">
+                        <table>
+                            <tr>
+                                <td>A-curve</td>
+                                <td>
+                                    <select id="">
+                                        <option value="linear">linear</option>
+                                        <option value="exponential">exp</option>
+                                        <option value="sine">sine</option>
+                                        <option value="cosine">cosine</option>
+                                        <option value="bounce">bounce</option>
+                                        <option value="ripple">ripple</option>
+                                        <option value="step">step</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>D-curve</td>
+                                <td>
+                                    <select id="">
+                                        <option value="linear">linear</option>
+                                        <option value="exponential">exp</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align: center;">R-curve</div>
+                        <div class="r_curve">
+                            <div class="point">
+                                <div class="fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="point">
+                                <div class="fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="point">
+                                <div class="fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="point">
+                                <div class="fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="point">
+                                <div class="fill" style="height: 100%;"></div>
                             </div>
                         </div>
                     </div>
                     <div class="filter_env_additional_params">
-                        
+                        <table style="flex: 1">
+                            <tr>
+                                <td>B-Frequency</td>
+                                <td>
+                                    <input type="number" id="" value="300" min="100" max="1000" step="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Octaves</td>
+                                <td>
+                                    <input type="number" id="" value="4" min="2" max="8">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Exponent</td>
+                                <td>
+                                    <input type="number" id="" value="2" min="1" max="10">
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -305,10 +305,11 @@ select {
 
 .filter_env .working_space {
     margin-bottom: 3%;
+    justify-content: space-between;
 }
 
 .filter_env .working_space>* {
-    flex-basis: 50%;
+    flex-basis: 30%;
 }
 
 .filter_env .caption {
@@ -316,16 +317,11 @@ select {
     text-align: center;
 }
 
-.filter_env_adsr {
+
+.filter_env_additional_params {
+    flex-basis: 30%;
     display: flex;
-    justify-content: space-between;
 }
-
-.filter_env_adsr>* {
-    flex-basis: 48%;
-}
-
-.filter_env_additional_params {}
 
 .key_wrap {
     border-top: var(--sexy-border);
