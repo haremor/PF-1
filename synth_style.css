@@ -272,6 +272,12 @@ select {
     flex-direction: column;
 }
 
+.curves table {
+    width: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
 .curves select {
     width: 100%;
 }
@@ -296,6 +302,30 @@ select {
 .filter_env {
     grid-area: 3 / 3 / 5 / 6;
 }
+
+.filter_env .working_space {
+    margin-bottom: 3%;
+}
+
+.filter_env .working_space>* {
+    flex-basis: 50%;
+}
+
+.filter_env .caption {
+    margin-bottom: 45%;
+    text-align: center;
+}
+
+.filter_env_adsr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter_env_adsr>* {
+    flex-basis: 48%;
+}
+
+.filter_env_additional_params {}
 
 .key_wrap {
     border-top: var(--sexy-border);

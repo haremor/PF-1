@@ -6,30 +6,29 @@ let customSynth = {
         "detune": 0,
         "portamento": 0,
         "envelope": {
-            "attack": 0.05,
+            "attack": 0,
             "attackCurve": "linear",
-            "decay": 0.3,
+            "decay": 0,
             "decayCurve": "exponential",
-            "release": 0.8,
-            "releaseCurve": "exponential",
+            "release": 0,
+            "releaseCurve": "exponential", // new Array(100).fill(0).map(() => Math.random())
             "sustain": 0.4
         },
         "filter": {
             "Q": 1,
-            "detune": 0,
             "frequency": 0,
             "gain": 0,
             "rolloff": -12,
             "type": "lowpass"
         },
         "filterEnvelope": {
-            "attack": 0.001,
+            "attack": 0,
             "attackCurve": "linear",
-            "decay": 0.7,
+            "decay": 0,
             "decayCurve": "exponential",
-            "release": 0.8,
+            "release": 0,
             "releaseCurve": "exponential",
-            "sustain": 0.1,
+            "sustain": 0,
             "baseFrequency": 300,
             "exponent": 2,
             "octaves": 4
@@ -37,7 +36,7 @@ let customSynth = {
         "oscillator": {
             "detune": 0,
             "frequency": 440,
-            "partialCount": 8,
+            "partialCount": 0,
             "partials": [],
             "phase": 0,
             "type": "square"
