@@ -15,7 +15,45 @@
     <div class="synth noselect">
         <div class="controls">
             <div class="logo">PF-1</div>
-            <div class="additional"></div>
+            <div class="additional">
+                <table>
+                    <tr>
+                        <td>Porta</td>
+                        <td>
+                            <input type="number" id="" value="0" min="0" max="1" step="0.05">
+                        </td>
+                    </tr>
+                </table>
+                <div class="add_param_box">
+                    <div class="add_param_caption">Osc-partials</div>
+                    <div class="button_container">
+                        <div class="button">RAND</div>
+                        <div class="button">RESET</div>
+                    </div>
+                </div>
+                <div class="add_param_box">
+                    <div class="add_param_caption">R-curve 1</div>
+                    <div class="button_container">
+                        <div class="button">RAND</div>
+                        <div class="button">RESET</div>
+                    </div>
+                </div>
+                <div class="add_param_box">
+                    <div class="add_param_caption">R-curve 2</div>
+                    <div class="button_container">
+                        <div class="button">RAND</div>
+                        <div class="button">RESET</div>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <td>Detune</td>
+                        <td>
+                            <input type="range" id="" value="0" min="-100" max="100">
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div class="osc">
                 <div class="section_name">OSC</div>
                 <div class="working_space">
@@ -245,7 +283,7 @@
                         </div>
                     </div>
                     <div class="filter_env_additional_params">
-                        <table style="flex: 1">
+                        <table style="flex-grow: 1;">
                             <tr>
                                 <td>B-Frequency</td>
                                 <td>

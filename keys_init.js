@@ -2,7 +2,7 @@ let customSynth = {
     currentNote: null,
     changeOctaveBy: 0,
     params: {
-        "volume": -8,
+        "volume": -10,
         "detune": 0,
         "portamento": 0,
         "envelope": {
@@ -34,7 +34,6 @@ let customSynth = {
             "octaves": 4
         },
         "oscillator": {
-            "detune": 0,
             "frequency": 440,
             "partialCount": 0,
             "partials": [],
