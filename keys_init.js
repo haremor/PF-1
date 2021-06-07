@@ -2,7 +2,7 @@ let customSynth = {
     currentNote: null,
     changeOctaveBy: 0,
     params: {
-        "volume": -10,
+        "volume": -20,
         "detune": 0,
         "portamento": 0,
         "envelope": {
@@ -81,7 +81,7 @@ let keyCodes = {
     "Semicolon": null
 }
 
-let synthKeys = document.querySelectorAll(".key_container>*");
+const synthKeys = document.querySelectorAll(".key_container>*");
 const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.params).toDestination(); // Define the synth
 let mouseDown;
 
