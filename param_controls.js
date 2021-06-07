@@ -1,7 +1,9 @@
 const oscTypeSelect = document.querySelectorAll(".osc_type_select>*");
-const inputs = document.querySelectorAll("input");
+const allInputs = document.querySelectorAll("input");
+const rangeInputs = document.querySelectorAll("input[type=range]");
+const selects = document.querySelectorAll("select");
 
-const changeParam = (param, changeTo, paramGroup) => {
+function changeParam (el, param = el.dataset.type, changeTo = el.value, paramGroup = el.dataset.group) {
     let dispObj = {}, groupObj = {};
     groupObj[param] = changeTo;
     dispObj[paramGroup] = groupObj;
@@ -12,9 +14,22 @@ const changeParam = (param, changeTo, paramGroup) => {
     return dispObj
 }
 
-inputs.forEach(el => {
+allInputs.forEach(el => {
     el.oninput = e => {
-        changeParam(e.target.dataset.type, e.target.value, e.target.dataset.group)
+        changeParam(e.target);
+    }
+})
+
+rangeInputs.forEach(el => {
+    el.ondblclick = e => {
+        e.target.value = 0;
+        changeParam(e.target);
+    }
+})
+
+selects.forEach(el => {
+    el.onchange = e => {
+        changeParam(e.target)
     }
 })
 
@@ -23,7 +38,7 @@ oscTypeSelect.forEach(el => {
         var currentEl = el;
         e.target.classList.add("pressed");
         oscTypeSelect.forEach(el => { // Elegant as fuck
-            changeParam("type", e.target.dataset.waveform, "oscillator");
+            changeParam(null, "type", e.target.dataset.waveform, "oscillator");
             if (el.classList.contains("pressed") && el !== currentEl) {
                 el.classList.remove("pressed");
             }

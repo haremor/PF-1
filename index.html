@@ -123,22 +123,22 @@
                     <div class="adsr">
                         <div class="attack_container">
                             <div class="caption">A</div>
-                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="attack" data-group="envelope" value="0" min="0" max="2" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="decay_container">
                             <div class="caption">D</div>
-                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="decay" data-group="envelope" value="0" min="0" max="2" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="sustain_container">
                             <div class="caption">S</div>
-                            <input type="range" id="" value="0" min="0" max="1" step="0.1">
+                            <input type="range" data-type="sustain" data-group="envelope" value="0.4" min="0" max="1" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="release_container">
                             <div class="caption">R</div>
-                            <input type="range" id="" value="0" min="0" max="5" step="0.1">
+                            <input type="range" data-type="release" data-group="envelope" value="0.1" min="0" max="5" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <tr>
                                 <td>A-curve</td>
                                 <td>
-                                    <select id="">
+                                    <select data-type="attackCurve" data-group="envelope">
                                         <option value="linear">linear</option>
                                         <option value="exponential">exp</option>
                                         <option value="sine">sine</option>
@@ -161,7 +161,7 @@
                             <tr>
                                 <td>D-curve</td>
                                 <td>
-                                    <select id="">
+                                    <select data-type="decayCurve" data-group="envelope">
                                         <option value="linear">linear</option>
                                         <option value="exponential">exp</option>
                                     </select>
@@ -196,13 +196,19 @@
                         <tr>
                             <td>Q-factor</td>
                             <td style="text-align: center;">
-                                <input type="number" id="" value="0" min="0" max="10">
+                                <input type="number" data-type="Q" data-group="filter" value="0" min="0" max="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cutoff</td>
+                            <td style="text-align: center;">
+                                <input type="number" data-type="frequency" data-group="filter" value="0" min="0" max="1000" step="10">
                             </td>
                         </tr>
                         <tr>
                             <td>Type</td>
                             <td>
-                                <select id="">
+                                <select data-type="type" data-group="filter">
                                     <option value="lowpass">lowpass</option>
                                     <option value="highpass">highpass</option>
                                     <option value="allpass">allpass</option>
@@ -218,22 +224,22 @@
                     <div class="adsr">
                         <div class="attack_container">
                             <div class="caption">A</div>
-                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="attack" data-group="filterEnvelope" value="0" min="0" max="2" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="decay_container">
                             <div class="caption">D</div>
-                            <input type="range" id="" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="decay" data-group="filterEnvelope" value="0" min="0" max="2" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="sustain_container">
                             <div class="caption">S</div>
-                            <input type="range" id="" value="0" min="0" max="1" step="0.1">
+                            <input type="range" data-type="sustain" data-group="filterEnvelope" value="0.4" min="0" max="1" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="release_container">
                             <div class="caption">R</div>
-                            <input type="range" id="" value="0" min="0" max="5" step="0.1">
+                            <input type="range" data-type="release" data-group="filterEnvelope" value="0.1" min="0" max="5" step="0.1">
                             <div class="env_val">0</div>
                         </div>
                     </div>
@@ -242,7 +248,7 @@
                             <tr>
                                 <td>A-curve</td>
                                 <td>
-                                    <select id="">
+                                    <select data-type="attackCurve" data-group="filterEnvelope">
                                         <option value="linear">linear</option>
                                         <option value="exponential">exp</option>
                                         <option value="sine">sine</option>
@@ -256,7 +262,7 @@
                             <tr>
                                 <td>D-curve</td>
                                 <td>
-                                    <select id="">
+                                    <select data-type="decayCurve" data-group="filterEnvelope">
                                         <option value="linear">linear</option>
                                         <option value="exponential">exp</option>
                                     </select>
@@ -285,21 +291,21 @@
                     <div class="filter_env_additional_params">
                         <table style="flex-grow: 1;">
                             <tr>
-                                <td>B-Frequency</td>
+                                <td>Base-freq</td>
                                 <td>
-                                    <input type="number" id="" value="300" min="100" max="1000" step="10">
+                                    <input type="number" data-type="baseFrequency" data-group="filterEnvelope" value="300" min="100" max="1000" step="10">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Octaves</td>
                                 <td>
-                                    <input type="number" id="" value="4" min="2" max="8">
+                                    <input type="number" data-type="octaves" data-group="filterEnvelope" value="4" min="2" max="8">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Exponent</td>
                                 <td>
-                                    <input type="number" id="" value="2" min="1" max="10">
+                                    <input type="number" data-type="exponent" data-group="filterEnvelope" value="2" min="1" max="10">
                                 </td>
                             </tr>
                         </table>

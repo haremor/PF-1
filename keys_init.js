@@ -2,7 +2,7 @@ let customSynth = {
     currentNote: null,
     changeOctaveBy: 0,
     params: {
-        "volume": -20,
+        "volume": -10,
         "detune": 0,
         "portamento": 0,
         "envelope": {
@@ -10,8 +10,8 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0,
-            "releaseCurve": "exponential", // new Array(100).fill(0).map(() => Math.random())
+            "release": 0.1,
+            "releaseCurve": "exponential",
             "sustain": 0.4
         },
         "filter": {
@@ -26,9 +26,9 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0,
+            "release": 0.1,
             "releaseCurve": "exponential",
-            "sustain": 0,
+            "sustain": 0.4,
             "baseFrequency": 300,
             "exponent": 2,
             "octaves": 4
