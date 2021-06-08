@@ -206,34 +206,6 @@ select {
     width: 4px;
 }
 
-.add_param_box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: var(--sexy-border);
-    border-radius: 10px;
-    flex-basis: 24%;
-}
-
-.add_param_box:nth-child(2),
-.add_param_box:nth-child(3) {
-    border-bottom: none;
-}
-
-.add_param_box:nth-child(3),
-.add_param_box:nth-child(4) {
-    border-top: none;
-}
-
-.button_container {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.add_param_caption {
-    text-align: center;
-}
-
 .osc {
     grid-area: 1 / 2 / 3 / 4;
 }
@@ -267,19 +239,6 @@ select {
     flex-direction: column;
 }
 
-.partials_container {
-    width: 100%;
-    padding: 10% 5% 10% 5%;
-    margin-top: 5%;
-    display: flex;
-    align-items: center;
-    flex: 1;
-    border: var(--sexy-border);
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.partial,
 .point {
     height: 50%;
     margin: 0 1px;

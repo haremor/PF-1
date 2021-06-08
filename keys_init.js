@@ -5,6 +5,11 @@ let customSynth = {
         "volume": -10,
         "detune": 0,
         "portamento": 0,
+        "oscillator": {
+            "type": "fatsquare",
+            "count": 1,
+            "spread": 1,
+        },
         "envelope": {
             "attack": 0,
             "attackCurve": "linear",
@@ -15,7 +20,7 @@ let customSynth = {
             "sustain": 0.4
         },
         "filter": {
-            "Q": 1,
+            "Q": 0,
             "frequency": 0,
             "gain": 0,
             "rolloff": -12,
@@ -32,13 +37,6 @@ let customSynth = {
             "baseFrequency": 300,
             "exponent": 2,
             "octaves": 4
-        },
-        "oscillator": {
-            "frequency": 440,
-            "partialCount": 0,
-            "partials": [],
-            "phase": 0,
-            "type": "square"
         }
     },
     // gotta make an anti-click mode
