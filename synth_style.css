@@ -62,7 +62,7 @@ input[type=range] {
     width: 100%;
     margin: 0;
     position: relative;
-    top: 15%;
+    top: 17%;
     background: none;
     transform: rotate(-90deg) scale(2, 1);
     cursor: pointer;
@@ -125,8 +125,8 @@ select {
     padding: 2%;
     display: grid;
     box-sizing: border-box;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 2% 2%;
 }
 
@@ -138,7 +138,7 @@ select {
     font-family: "Lato", sans-serif;
 }
 
-.controls>*:not(.additional)>*:first-child {
+.controls>*:not(.additional, .extra)>*:first-child {
     font-size: 1.5rem;
     text-align: center;
 }
@@ -159,7 +159,7 @@ select {
 }
 
 .working_space {
-    margin: 0 2% 5%;
+    margin: 0 2% 10px;
     flex-basis: 80%;
     display: flex;
 }
@@ -183,13 +183,17 @@ select {
 }
 
 .additional {
-    grid-area: 2 / 1 / 5 / 2;
+    grid-area: 3 / 1 / 5 / 2;
     padding-left: 4%;
     padding-right: 4%;
 }
 
 .additional table {
-    flex-basis: 15%;
+    flex-basis: 100%;
+}
+
+.additional tr {
+    height: 30%;
 }
 
 .additional input[type=range] {
@@ -206,8 +210,32 @@ select {
     width: 4px;
 }
 
+.extra {
+    grid-area: 2 / 1 / 3 / 2;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.extra table {
+    flex-basis: 100%;
+}
+
+.reverb {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.reverb .working_space{
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.reverb table{
+    flex: 1;
+}
+
 .osc {
-    grid-area: 1 / 2 / 3 / 4;
+    grid-area: 1 / 3 / 3 / 4;
 }
 
 .osc input {
@@ -215,7 +243,7 @@ select {
 }
 
 .osc .working_space {
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .osc_type_options {
@@ -331,7 +359,6 @@ select {
 }
 
 .filter_env .working_space {
-    margin-bottom: 3%;
     justify-content: space-between;
 }
 

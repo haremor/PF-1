@@ -15,6 +15,22 @@
     <div class="synth noselect">
         <div class="controls">
             <div class="logo">PF-1</div>
+            <div class="extra">
+                <table>
+                    <tr>
+                        <td>Anti-click mode</td>
+                        <td>
+                            <div class="button anti_click">ON</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hard-reset</td>
+                        <td>
+                            <div class="button reset">INIT</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div class="additional">
                 <table>
                     <tr>
@@ -23,22 +39,49 @@
                             <input type="number" data-type="portamento" value="0" min="0" max="1" step="0.05">
                         </td>
                     </tr>
-                </table>
-                <table>
                     <tr>
                         <td>Detune</td>
                         <td>
                             <input type="range" data-type="detune" value="0" min="-250" max="250">
                         </td>
                     </tr>
+                    <tr>
+                        <td>Volume</td>
+                        <td>
+                            <input type="range" data-type="volume" value="0" min="-30" max="0">
+                        </td>
+                    </tr>
                 </table>
+            </div>
+            <div class="reverb">
+                <div class="section_name">REVERB</div>
+                <div class="working_space">
+                    <div class="button">ON</div>
+                    <table>
+                        <tr>
+                            <td>Wet</td>
+                            <td>
+                                <input class="reverb_param" type="number" data-type="wet" value="1" min="0" max="1"
+                                    step="0.05">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Room-size</td>
+                            <td>
+                                <input class="reverb_param" type="number" data-type="roomSize" value="0" min="0" max="1"
+                                    step="0.05">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class="osc">
                 <div class="section_name">OSC</div>
                 <div class="working_space">
                     <div class="osc_type_options">
                         <div class="osc_type_select">
-                            <div class="button pressed" data-osctype="fatsquare" style="grid-area: 1 / 1 / 2 / 2;">SQR</div>
+                            <div class="button pressed" data-osctype="fatsquare" style="grid-area: 1 / 1 / 2 / 2;">SQR
+                            </div>
                             <div class="button" data-osctype="fattriangle" style="grid-area: 1 / 2 / 2 / 3;">TRI</div>
                             <div class="button" data-osctype="fatsine" style="grid-area: 2 / 1 / 3 / 2;">SIN</div>
                             <div class="button" data-osctype="fatsawtooth" style="grid-area: 2 / 2 / 3 / 3;">SAW</div>
@@ -47,13 +90,15 @@
                             <tr>
                                 <td>Osc-count</td>
                                 <td>
-                                    <input type="number" data-type="count" data-group="oscillator" value="1" min="1" max="10">
+                                    <input type="number" data-type="count" data-group="oscillator" value="1" min="1"
+                                        max="10">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Spread</td>
                                 <td>
-                                    <input type="number" data-type="spread" data-group="oscillator" value="0" min="0" max="500" step="10">
+                                    <input type="number" data-type="spread" data-group="oscillator" value="0" min="0"
+                                        max="500" step="10">
                                 </td>
                             </tr>
                         </table>
@@ -66,23 +111,27 @@
                     <div class="adsr">
                         <div class="attack_container">
                             <div class="caption">A</div>
-                            <input type="range" data-type="attack" data-group="envelope" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="attack" data-group="envelope" value="0" min="0" max="2"
+                                step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="decay_container">
                             <div class="caption">D</div>
-                            <input type="range" data-type="decay" data-group="envelope" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="decay" data-group="envelope" value="0" min="0" max="2"
+                                step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="sustain_container">
                             <div class="caption">S</div>
-                            <input type="range" data-type="sustain" data-group="envelope" value="0.4" min="0" max="1" step="0.1">
+                            <input type="range" data-type="sustain" data-group="envelope" value="0.4" min="0" max="1"
+                                step="0.1">
                             <div class="env_val">0.4</div>
                         </div>
                         <div class="release_container">
                             <div class="caption">R</div>
-                            <input type="range" data-type="release" data-group="envelope" value="0.1" min="0" max="5" step="0.1">
-                            <div class="env_val">0.1</div>
+                            <input type="range" data-type="release" data-group="envelope" value="0" min="0" max="5"
+                                step="0.1">
+                            <div class="env_val">0</div>
                         </div>
                     </div>
                     <div class="curves">
@@ -145,7 +194,8 @@
                         <tr>
                             <td>Cutoff</td>
                             <td style="text-align: center;">
-                                <input type="number" data-type="frequency" data-group="filter" value="0" min="0" max="1000" step="10">
+                                <input type="number" data-type="frequency" data-group="filter" value="0" min="0"
+                                    max="1000" step="10">
                             </td>
                         </tr>
                         <tr>
@@ -167,23 +217,27 @@
                     <div class="adsr">
                         <div class="attack_container">
                             <div class="caption">A</div>
-                            <input type="range" data-type="attack" data-group="filterEnvelope" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="attack" data-group="filterEnvelope" value="0" min="0" max="2"
+                                step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="decay_container">
                             <div class="caption">D</div>
-                            <input type="range" data-type="decay" data-group="filterEnvelope" value="0" min="0" max="2" step="0.1">
+                            <input type="range" data-type="decay" data-group="filterEnvelope" value="0" min="0" max="2"
+                                step="0.1">
                             <div class="env_val">0</div>
                         </div>
                         <div class="sustain_container">
                             <div class="caption">S</div>
-                            <input type="range" data-type="sustain" data-group="filterEnvelope" value="0.4" min="0" max="1" step="0.1">
+                            <input type="range" data-type="sustain" data-group="filterEnvelope" value="0.4" min="0"
+                                max="1" step="0.1">
                             <div class="env_val">0.4</div>
                         </div>
                         <div class="release_container">
                             <div class="caption">R</div>
-                            <input type="range" data-type="release" data-group="filterEnvelope" value="0.1" min="0" max="5" step="0.1">
-                            <div class="env_val">0.1</div>
+                            <input type="range" data-type="release" data-group="filterEnvelope" value="0" min="0"
+                                max="5" step="0.1">
+                            <div class="env_val">0</div>
                         </div>
                     </div>
                     <div class="curves">
@@ -236,19 +290,22 @@
                             <tr>
                                 <td>Base-freq</td>
                                 <td>
-                                    <input type="number" data-type="baseFrequency" data-group="filterEnvelope" value="300" min="100" max="1000" step="10">
+                                    <input type="number" data-type="baseFrequency" data-group="filterEnvelope"
+                                        value="300" min="100" max="1000" step="10">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Octaves</td>
                                 <td>
-                                    <input type="number" data-type="octaves" data-group="filterEnvelope" value="4" min="2" max="8">
+                                    <input type="number" data-type="octaves" data-group="filterEnvelope" value="4"
+                                        min="2" max="8">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Exponent</td>
                                 <td>
-                                    <input type="number" data-type="exponent" data-group="filterEnvelope" value="2" min="1" max="10">
+                                    <input type="number" data-type="exponent" data-group="filterEnvelope" value="2"
+                                        min="1" max="10">
                                 </td>
                             </tr>
                         </table>

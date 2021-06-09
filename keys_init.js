@@ -1,8 +1,9 @@
 let customSynth = {
     currentNote: null,
     changeOctaveBy: 0,
+    antiClickTriggered: false,
     params: {
-        "volume": -10,
+        "volume": 0,
         "detune": 0,
         "portamento": 0,
         "oscillator": {
@@ -15,8 +16,8 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0.1,
-            "releaseCurve": "exponential",
+            "release": 0,
+            "releaseCurve": "linear", // new Array(50).fill(0).map(() => Math.random())
             "sustain": 0.4
         },
         "filter": {
@@ -31,31 +32,31 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0.1,
-            "releaseCurve": "exponential",
+            "release": 0,
+            "releaseCurve": "linear",
             "sustain": 0.4,
             "baseFrequency": 300,
             "exponent": 2,
             "octaves": 4
         }
     },
-    // gotta make an anti-click mode
+
     playNote: function (el) {
         el.classList.add("active");
-        // globalThis.now = Tone.now();
+        globalThis.now = Tone.now();
         let note = customSynth.currentNote;
         note = el.id;
         note = note.replace(note[note.length - 1], +note[note.length - 1] + customSynth.changeOctaveBy); // Elegant as fuck
-        toneSynth.triggerAttack(note, Tone.immediate());
+        toneSynth.triggerAttack(note, this.antiClickTriggered === true ? now : Tone.immediate());
     },
 
     stopNote: function (el) {
         el.classList.remove("active");
-        // globalThis.now = Tone.now();
+        globalThis.now = Tone.now();
         let note = customSynth.currentNote;
         note = el.id;
         note = note.replace(note[note.length - 1], +note[note.length - 1] + customSynth.changeOctaveBy);
-        toneSynth.triggerRelease(note, Tone.immediate());
+        toneSynth.triggerRelease(note, this.antiClickTriggered === true ? now : Tone.immediate());
     }
 }
 
@@ -80,14 +81,17 @@ let keyCodes = {
 }
 
 const synthKeys = document.querySelectorAll(".key_container>*");
-const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.params).toDestination(); // Define the synth
+const destination = Tone.Destination;
+const reverbFX = new Tone.JCReverb(0).toDestination();
+const toneSynth = new Tone.PolySynth(Tone.MonoSynth, customSynth.params);
+toneSynth.connect(destination);
 let mouseDown;
 
 document.addEventListener("mousedown", () => { mouseDown = true });
 document.addEventListener("mouseup", () => { mouseDown = false });
 
-const clamp = (n, min, max) => { // Clamp the value between the thresholds
-    return Math.min(Math.max(n, min), max);
+const clamp = (number, min, max) => { // Clamp the value between the thresholds
+    return Math.min(Math.max(number, min), max);
 }
 
 synthKeys.forEach(el => { // Key events
@@ -122,9 +126,9 @@ document.onkeydown = e => {
                 customSynth.playNote(keyCodes[e.code]);
             }
     }
-    document.onkeyup = e => {
-        if (e.code in keyCodes) {
-            customSynth.stopNote(keyCodes[e.code]);
-        }
+}
+document.onkeyup = e => {
+    if (e.code in keyCodes) {
+        customSynth.stopNote(keyCodes[e.code]);
     }
 }
