@@ -20,7 +20,6 @@ body {
     background: linear-gradient(#FA3C3C, #2177AD);
     color: white;
     text-shadow: var(--sexy-text-shadow);
-    font-family: "Roboto", sans-serif;
     /* image-rendering: crisp-edges; */
 }
 
