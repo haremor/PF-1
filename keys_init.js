@@ -97,7 +97,7 @@ const clamp = (number, min, max) => { // Clamp the value between the thresholds
 synthKeys.forEach(el => { // Key events
     el.onmousedown = e => { e.button === 0 ? customSynth.playNote(e.target) : null }
     el.onmouseup = e => { customSynth.stopNote(e.target) }
-    el.onmouseover = e => { if (mouseDown) customSynth.playNote(e.target) }; // I implemented this just so you can do a fucking key slide on a mousedown
+    el.onmouseover = e => { if (mouseDown) customSynth.playNote(e.target) };
     el.onmouseleave = e => { customSynth.stopNote(e.target) };
 })
 
