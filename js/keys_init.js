@@ -16,7 +16,7 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0,
+            "release": 0.1,
             "releaseCurve": "linear", // new Array(50).fill(0).map(() => Math.random())
             "sustain": 0.4
         },
@@ -32,7 +32,7 @@ let customSynth = {
             "attackCurve": "linear",
             "decay": 0,
             "decayCurve": "exponential",
-            "release": 0,
+            "release": 0.1,
             "releaseCurve": "linear",
             "sustain": 0.4,
             "baseFrequency": 300,

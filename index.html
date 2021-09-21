@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" sizes="128x128" href="favicon.ico" type="image/ico">
+    <link rel="shortcut icon" sizes="128x128" href="img/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="synth_style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.9/Tone.js"></script>
     <title>Synthol</title>
@@ -151,9 +150,9 @@
                         </div>
                         <div class="release_container">
                             <div class="caption">R</div>
-                            <input type="range" data-type="release" data-group="envelope" value="0" min="0" max="5"
+                            <input type="range" data-type="release" data-group="envelope" value="0.1" min="0" max="5"
                                 step="0.1">
-                            <div class="env_val">0</div>
+                            <div class="env_val">0.1</div>
                         </div>
                     </div>
                     <div class="curves">
@@ -259,7 +258,7 @@
                             <div class="caption">R</div>
                             <input type="range" data-type="release" data-group="filterEnvelope" value="0" min="0"
                                 max="5" step="0.1">
-                            <div class="env_val">0</div>
+                            <div class="env_val">0.1</div>
                         </div>
                     </div>
                     <div class="curves">
@@ -339,9 +338,8 @@
             <div id="keys"></div>
         </div>
     </div>
-    <script src="create.js"></script>
-    <script src="keys_init.js"></script>
-    <script src="param_controls.js"></script>
+    <script src="js/create.js"></script>
+    <script src="js/keys_init.js"></script>
+    <script src="js/param_controls.js"></script>
 </body>
-
 </html>
