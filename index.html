@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" sizes="128x128" href="img/favicon.ico" type="image/ico">
-    <link rel="stylesheet" href="synth_style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.9/Tone.js"></script>
     <title>Synthol</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-        .back {
+        .about {
             position: absolute;
             left: 1%;
             top: 1%;
@@ -21,18 +21,17 @@
             text-shadow: none;
         }
 
-        .back:visited {
+        .about:visited {
             color: black;
         }
 
-        .back:hover {
+        .about:hover {
             transform: scale(1.1);
         }
     </style>
 </head>
-
 <body>
-    <a href="about.html" class="back">About</a>
+    <a href="about.html" class="about">About</a>
     <div class="synth noselect">
         <div class="controls">
             <div class="logo">PF-1</div>
@@ -216,7 +215,7 @@
                             <td>Cutoff</td>
                             <td style="text-align: center;">
                                 <input type="number" data-type="frequency" data-group="filter" value="0" min="0"
-                                    max="1000" step="10">
+                                    max="1000" step="50">
                             </td>
                         </tr>
                         <tr>
@@ -312,7 +311,7 @@
                                 <td>Base-freq</td>
                                 <td>
                                     <input type="number" data-type="baseFrequency" data-group="filterEnvelope"
-                                        value="300" min="100" max="1000" step="10">
+                                        value="300" min="100" max="1000" step="50">
                                 </td>
                             </tr>
                             <tr>
@@ -338,8 +337,9 @@
             <div id="keys"></div>
         </div>
     </div>
-    <script src="js/create.js"></script>
-    <script src="js/keys_init.js"></script>
-    <script src="js/param_controls.js"></script>
+    <script>let now = Tone.now()</script>
+    <script type="module" src="js/create_keys.js"></script>
+    <script type="module" src="js/init_keys.js"></script>
+    <script type="module" src="js/init_controls.js"></script>
 </body>
 </html>

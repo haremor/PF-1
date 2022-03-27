@@ -1,3 +1,8 @@
+// Initialize controls
+
+import utils from './lib/utils.js';
+import {toneSynth, customSynth, destination, reverbFX} from './lib/synthLib.js';
+
 const oscTypeSelect = document.querySelectorAll(".osc_type_select>*");
 const allInputs = document.querySelectorAll("input:not(.reverb_param)");
 const rangeInputs = document.querySelectorAll("input[type=range]");
@@ -6,20 +11,24 @@ const reverbButton = document.querySelector(".reverb .button");
 const reverbParams = document.querySelectorAll(".reverb_param");
 const releasePoints = document.querySelectorAll(".point");
 const resetButton = document.querySelector(".reset");
-const antiClickButton = document.querySelector(".anti_click")
+const antiClickButton = document.querySelector(".anti_click");
 
 const changeSynthParam = (el, param = el.dataset.type, changeTo = el.value, paramGroup = el.dataset.group) => {
     if (!isNaN(+changeTo) && !(changeTo instanceof Array)) { // Check if it's a string containing a number or an array. I want to die
         changeTo = +changeTo;
     }
+
     let dispObj = {}, groupObj = {};
     groupObj[param] = changeTo;
     dispObj[paramGroup] = groupObj;
+
     if (!paramGroup) {
         dispObj = groupObj;
     }
+
     toneSynth.set(dispObj);
-    return dispObj
+
+    return dispObj;
 }
 
 const changeBoxValue = (el) => {
@@ -45,7 +54,7 @@ const changeReverbParam = (el) => {
 
 allInputs.forEach(el => {
     el.addEventListener("input", (e) => {
-        changeSynthParam(e.target)
+        changeSynthParam(e.target);
     })
 })
 
@@ -68,16 +77,16 @@ selects.forEach(el => {
 
 oscTypeSelect.forEach(el => {
     el.onmousedown = e => {
-        oscType = e.target.dataset.osctype;
-        var currentEl = el;
+        const oscType = e.target.dataset.osctype;
+        const currentEl = el;
         e.target.classList.add("pressed");
         oscTypeSelect.forEach(el => { // Elegant as fuck
-            changeSynthParam(null, "type", e.target.dataset.osctype, "oscillator");
+            changeSynthParam(null, "type", oscType, "oscillator");
             if (el.classList.contains("pressed") && el !== currentEl) {
                 el.classList.remove("pressed");
             }
         })
-    };
+    }
 });
 
 reverbButton.onmousedown = e => {
@@ -91,14 +100,14 @@ reverbParams.forEach(el => {
     }
 })
 
-releasePoints.forEach(el => {
+releasePoints.forEach(el => { // Wasn't fully implemented
     let y, readyToResize;
     el.onmousemove = e => {
         let rect = e.target.getBoundingClientRect();
         let fill = e.target.firstElementChild;
         y = e.clientY - rect.bottom;
         if (readyToResize) {
-            fill.style.height = clamp(-y * 3, 0, 100) + "%";
+            fill.style.height = utils.clamp(-y * 3, 0, 100) + "%";
         }
     }
     el.onmousedown = () => { readyToResize = true }

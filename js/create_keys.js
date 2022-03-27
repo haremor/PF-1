@@ -1,4 +1,5 @@
-const log = console.log;
+// Create DOM keys
+
 const notes = ["C", "D", "E", "F", "G", "A", "B"];
 let html = "";
 let toOctave = 3;

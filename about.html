@@ -28,6 +28,12 @@
 
         img {
             width: 60%;
+            margin: 2rem 0rem;
+        }
+
+        kbd {
+            background-color: darkgrey;
+            border-radius: .2rem;
         }
 
         .back {
@@ -47,10 +53,16 @@
         }
 
         .content {
-            width: 50%;
+            width: 60%;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .controls {
+            padding: 2rem;
+            border: black 5px solid;
+            border-radius: 2rem;
         }
     </style>
 </head>
@@ -60,25 +72,14 @@
         <img src="img/synth_prev.png" alt="yomama">
         <p>PF-1 ("Profane fest") is an online-based fully-fledged
             synthesizer.</p>
-        <p>It's composed of one oscillator, one filter and two envelopes. The amplitude of the oscillator and the cutoff
+        <p style="margin:0">It's composed of one oscillator, one filter and two envelopes. The amplitude of the
+            oscillator and the cutoff
             frequency of the filter are controlled by the envelopes.</p>
         <img src="img/schematic.svg" alt="yomama">
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque sed officia sit quae
-                reprehenderit corporis, omnis explicabo ea maxime molestiae laborum numquam enim tenetur reiciendis
-                placeat id vel provident!</p>
-            <p>Eius accusantium iste veritatis blanditiis nostrum ducimus numquam tempora doloremque corporis laudantium
-                ea nihil natus doloribus minima error debitis earum necessitatibus iusto quia nemo, repellat ipsam
-                harum, enim suscipit? Quam.</p>
-            <p>Accusamus magni corrupti enim porro quam veritatis vero necessitatibus, neque ullam unde maxime ducimus
-                reiciendis alias quasi totam, voluptatem iure numquam fugit? Autem distinctio fugiat doloremque aliquid
-                facere, voluptas deleniti.</p>
-            <p>Quae ratione dolore deserunt error explicabo est tenetur iusto veritatis dolores, consectetur minus.
-                Impedit, possimus! Quaerat accusamus numquam illo totam magnam! Vel libero corrupti ipsam dicta hic
-                ratione velit ex!</p>
-            <p>Quos dolorem ea repellat ducimus cum saepe, repudiandae corrupti exercitationem consequatur autem animi
-                debitis distinctio porro earum amet atque in harum maxime? Mollitia dicta ut perspiciatis, architecto
-                atque eius dolor.</p>
+        <div class="controls">
+            <p style="text-align: center">CONTROLS</p>
+            <p>The octave can be lowered with the <kbd>Z</kbd> key and raised with the <kbd>X</kbd> key.</p>
+            <p>Params controlled with a slider can be restored to their original values by double clicking.</p>
         </div>
     </div>
 </body>
