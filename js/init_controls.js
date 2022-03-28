@@ -14,7 +14,7 @@ const resetButton = document.querySelector(".reset");
 const antiClickButton = document.querySelector(".anti_click");
 
 const changeSynthParam = (el, param = el.dataset.type, changeTo = el.value, paramGroup = el.dataset.group) => {
-    if (!isNaN(+changeTo) && !(changeTo instanceof Array)) { // Check if it's a string containing a number or an array. I want to die
+    if (!isNaN(+changeTo) && !(changeTo instanceof Array)) { // Check if it's a string containing a number and not an array. I want to die
         changeTo = +changeTo;
     }
 
