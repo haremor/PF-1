@@ -1,7 +1,7 @@
 // Initialize keys (sound and events)
 
 import utils from './lib/utils.js';
-import {toneSynth, customSynth, destination} from './lib/synthLib.js';
+import { toneSynth, customSynth, destination } from './lib/synthLib.js';
 
 toneSynth.connect(destination);
 
