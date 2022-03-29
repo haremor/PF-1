@@ -1,7 +1,7 @@
 // Initialize controls
 
 import utils from './lib/utils.js';
-import {toneSynth, customSynth, destination, reverbFX} from './lib/synthLib.js';
+import { toneSynth, customSynth, destination, reverbFX } from './lib/synthLib.js';
 
 const oscTypeSelect = document.querySelectorAll(".osc_type_select>*");
 const allInputs = document.querySelectorAll("input:not(.reverb_param)");
@@ -14,7 +14,7 @@ const resetButton = document.querySelector(".reset");
 const antiClickButton = document.querySelector(".anti_click");
 
 const changeSynthParam = (el, param = el.dataset.type, changeTo = el.value, paramGroup = el.dataset.group) => {
-    if (!isNaN(+changeTo) && !(changeTo instanceof Array)) { // Check if it's a string containing a number and not an array. I want to die
+    if (!isNaN(+changeTo) && !(changeTo instanceof Array)) { // Check if it's a string containing a number and not an array.
         changeTo = +changeTo;
     }
 
@@ -79,13 +79,15 @@ oscTypeSelect.forEach(el => {
     el.onmousedown = e => {
         const oscType = e.target.dataset.osctype;
         const currentEl = el;
+
         e.target.classList.add("pressed");
-        oscTypeSelect.forEach(el => { // Elegant as fuck
-            changeSynthParam(null, "type", oscType, "oscillator");
+        changeSynthParam(null, "type", oscType, "oscillator");
+
+        oscTypeSelect.forEach(el => {
             if (el.classList.contains("pressed") && el !== currentEl) {
                 el.classList.remove("pressed");
             }
-        })
+        });
     }
 });
 
